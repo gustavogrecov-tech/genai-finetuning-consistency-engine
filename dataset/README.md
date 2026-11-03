@@ -35,4 +35,11 @@ The training set comprises 13 pristine, uncompressed $1024 \times 1024$ image-te
 ---
 
 ## 4. Sample Verification Pairs
-All 13 training pairs are preserved in [`samples/`](./samples/) for full auditability and reproducibility.
+All 13 training pairs are preserved in [`samples/`](./samples/) and mirrored on [Hugging Face](https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/tree/main/dataset/samples) for full auditability and reproducibility.
+
+### Visual Preview of Dataset Stratification:
+
+| Macro / Tight Face | Studio Headshot | Upper Body / Bust | Full Body / Lifestyle |
+| :---: | :---: | :---: | :---: |
+| <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/dataset/samples/sofia_05_tight_face.png" width="180" alt="Tight Face" /> | <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/dataset/samples/sofia_01_portrait_studio_white.png" width="180" alt="Studio Headshot" /> | <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/dataset/samples/sofia_08_bust_studio_white.png" width="180" alt="Upper Body Bust" /> | <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/dataset/samples/sofia_15_full_street_casual.png" width="180" alt="Full Body Street" /> |
+| `sofia_05_tight_face.png` | `sofia_01_portrait_studio_white.png` | `sofia_08_bust_studio_white.png` | `sofia_15_full_street_casual.png` |
