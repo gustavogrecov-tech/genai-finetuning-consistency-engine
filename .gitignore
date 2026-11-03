@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large weight binaries (>100MB should be pulled via Hugging Face Hub or S3)
+*.safetensors
+*.ckpt
+*.pt
+*.bin
+*.tar.gz
+*.zip
+
+# Virtual Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and checkpoints
+*.log
+checkpoint-*/
+outputs/
+hf_cache/
+dataset_cache/

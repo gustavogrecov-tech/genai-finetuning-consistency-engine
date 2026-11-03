@@ -1,0 +1,21 @@
+{
+  "completed_at": "2026-10-28T14:26:16.421335",
+  "final_spend_usd": 1.6996,
+  "assets_preserved": [
+    "comparison_step_400.png",
+    "final_progress.json",
+    "latest_checkpoint.json",
+    "sentinel_state.json",
+    "sentinel_watchdog.log",
+    "sofia_krea2_lora_final.safetensors",
+    "sofia_krea2_lora_final_step700.safetensors",
+    "sofia_krea2_step_100.safetensors",
+    "sofia_krea2_step_200.safetensors",
+    "sofia_krea2_step_300.safetensors",
+    "sofia_krea2_step_400.safetensors",
+    "sofia_krea2_step_500.safetensors",
+    "sofia_krea2_step_600.safetensors",
+    "sofia_krea2_step_700.safetensors"
+  ],
+  "status": "ALL_ASSETS_SAVED_POD_TERMINATED"
+}
