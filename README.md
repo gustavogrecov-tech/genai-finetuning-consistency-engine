@@ -4,10 +4,11 @@
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.4+](https://img.shields.io/badge/PyTorch-2.4+-EE4C2C.svg?logo=pytorch)](https://pytorch.org/)
+[![Hugging Face Dataset](https://img.shields.io/badge/🤗%20HuggingFace-Dataset%20%26%20Artifacts-yellow.svg)](https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine)
 [![Hugging Face PEFT](https://img.shields.io/badge/HuggingFace-PEFT%20%7C%20Diffusers-yellow.svg?logo=huggingface)](https://huggingface.co/)
 [![Hardware](https://img.shields.io/badge/GPU-1x%20NVIDIA%20A40%20(48GB)-76B900.svg?logo=nvidia)](https://www.nvidia.com/)
 [![Cloud & FinOps](https://img.shields.io/badge/FinOps-Autonomous%20Sentinel%20Watchdog-00ADD8.svg)](./mlops/sentinel_watchdog.py)
-[![Target Role](https://img.shields.io/badge/Career%20Track-AI%20Engineer%20%7C%20iFood%20GenAI-EA1D2C.svg)](https://carreiras.ifood.com.br/)
+[![Career Track](https://img.shields.io/badge/Track-AI%20Engineering%20%7C%20Generative%20AI-0052CC.svg)](https://github.com/gustavogrecov-tech)
 
 **Engineering, fine-tuning, and operationalizing next-generation generative foundation models under strict cloud budget and memory constraints.**
 
@@ -22,12 +23,11 @@
 
 ---
 
-## 🎯 Candidate Profile & Project Purpose
+## 🎯 Author & Project Purpose
 
 > **Author:** Gustavo Sales Grecov  
 > **Affiliation:** Universidade Federal do ABC (UFABC)  
-> **Role Alignment:** **AI Engineer — Programa de Estágio GenAI (iFood)**  
-> **Core Focus:** Constrói, treina, otimiza e operacionaliza modelos de IA generativa de ponta a ponta, unindo engenharia de software robusta, técnicas avançadas de fine-tuning (PEFT/LoRA) e governança orçamentária autônoma (FinOps).
+> **Core Focus:** Engenharia de Inteligência Artificial, Fine-Tuning de Modelos de Fundação Multimodais (PEFT/LoRA), Otimização de Inferência (Zero-OOM) e Governança Orçamentária Autônoma em Nuvem (FinOps).
 
 ---
 
@@ -49,6 +49,7 @@ Este projeto apresenta a engenharia completa de **Fine-Tuning e Operacionalizaç
 | Total Execution Budget   | Ceiling: $2.00 | Effective Spend: $1.6996 (15.02% surplus)  |
 | Training Loss Evolution  | Initial: 0.8420 ➔ Final: 0.0185 (Krea) / 0.0231 (Qwen)      |
 | Production Validation    | High-resolution RAW rendering in complex alpine environment  |
+| Hugging Face Artifacts   | https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine |
 +--------------------------+--------------------------------------------------------------+
 ```
 
@@ -135,13 +136,13 @@ Um diferencial central deste projeto de Engenharia de IA é a abordagem de **Fin
 
 Para certificar que o modelo não sofreu *overfitting* de estúdio, executamos uma validação cega em cenário complexo fora da distribuição de treino: **Sofia em Campos do Jordão (Vila Capivari)** em uma manhã fria e nebulosa.
 
-### Amostra Oficial de Produção (Arquivo RAW nativo 1024x1024):
+### Amostras de Produção Renderizadas:
 
 <div align="center">
 
 | Amostra de Validação RAW (Produção) | Comparativo de Checkpoint (Step 400) |
 | :---: | :---: |
-| <img src="./benchmarks/results/foto_01_campos_cafe_capivari_Raw_00001_.png" width="400" alt="Sofia em Campos do Jordão RAW" /> | <img src="./benchmarks/results/comparison_step_400.png" width="400" alt="Sofia Step 400" /> |
+| <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_01_campos_cafe_capivari_Raw_00001_.png" width="400" alt="Sofia em Campos do Jordão RAW" /> | <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/comparison_step_400.png" width="400" alt="Sofia Step 400" /> |
 | *Cenário Complexo: Iluminação fria, vapor volumétrico, derme realista* | *Convergência intermediária de fisionomia e textura* |
 
 </div>
@@ -230,22 +231,11 @@ genai-finetuning-consistency-engine/
 
 ---
 
-## 🤝 Conexão com a Trilha AI Engineer do iFood
-
-| Pilar da Vaga iFood | Como este projeto demonstra domínio prático |
-| :--- | :--- |
-| **Engenharia de Software com foco em IA** | Código modular, tipado, estruturado com separação de responsabilidades (training, inference, MLOps, architecture) e scripts com CLI. |
-| **Construção e operacionalização de modelos de IA** | Fine-tuning de ponta a ponta em modelos abertos de vanguarda (Krea 2.1 Raw de 12.8B e Qwen-Image), aplicando PEFT e Flow Matching. |
-| **Eficiência e Otimização de Recursos** | Implementação de quantização `uint3` TorchAO, `FP8` Text Encoder, AdamW 8-bit e ciclo de vida dinâmico de memória (Zero-OOM). |
-| **Automação & FinOps em Nuvem** | Agente Sentinela autônomo com teto orçamentário rígido, auditoria de VRAM, resgate contínuo de checkpoints e terminação via API. |
-| **Portfólio com Implementações Reais** | Código fonte completo no GitHub, reprodutível, documentado com rigor acadêmico e validado com resultados fotorrealistas. |
-
----
-
 ## 📬 Contato
 
 - **Desenvolvedor:** Gustavo Sales Grecov
 - **LinkedIn:** [Gustavo Sales Grecov](https://br.linkedin.com/in/gustavo-sales-grecov-530745350)
 - **GitHub:** [@gustavogrecov-tech](https://github.com/gustavogrecov-tech)
+- **Hugging Face:** [@gustavogrecov002](https://huggingface.co/gustavogrecov002)
 - **E-mail:** [gustavo.grecov@aluno.ufabc.edu.br](mailto:gustavo.grecov@aluno.ufabc.edu.br)
 - **Universidade:** Universidade Federal do ABC (UFABC)
