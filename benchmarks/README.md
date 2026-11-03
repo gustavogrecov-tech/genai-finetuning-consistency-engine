@@ -4,7 +4,7 @@
 To rigorously evaluate whether the fine-tuned LoRA models achieved true concept generalization without studio overfitting, we conducted inference in an out-of-distribution, highly complex scene: **Sofia at Campos do Jordão (Vila Capivari)** during a cold, misty alpine morning.
 
 ### Target Benchmark Image (Uncompressed RAW):
-- **Source File:** [`results/foto_01_campos_cafe_capivari_Raw_00001_.png`](./results/foto_01_campos_cafe_capivari_Raw_00001_.png)
+- **Source File:** [`results/foto_01_campos_cafe_capivari_Raw_00001_.png`](https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_01_campos_cafe_capivari_Raw_00001_.png)
 - **Model Checkpoint:** `krea/Krea-2-Raw` + `sofia_krea2_step_700.safetensors`
 - **Native Resolution:** $1024 \times 1024$ pixels
 - **Inference Setup:** FlowMatch Scheduler, 28 steps, CFG Scale 4.5, Seed 42
@@ -34,11 +34,11 @@ To rigorously evaluate whether the fine-tuned LoRA models achieved true concept 
 
 | Production Sample (RAW) | Checkpoint Comparison (Step 400) |
 | :---: | :---: |
-| ![Sofia Café Capivari](./results/foto_01_campos_cafe_capivari_Raw_00001_.png) | ![Sofia Step 400](./results/comparison_step_400.png) |
+| <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_01_campos_cafe_capivari_Raw_00001_.png" width="400" alt="Sofia Café Capivari" /> | <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/comparison_step_400.png" width="400" alt="Sofia Step 400" /> |
 | *High-Fidelity Out-of-Studio Test* | *Checkpoint Progress Evaluation* |
 
 ---
 
 ## 3. Additional Benchmark Scenarios
-- [`results/foto_02_campos_mirante_por_do_sol_Raw_00001_.png`](./results/foto_02_campos_mirante_por_do_sol_Raw_00001_.png) — Sunset mountain overlook testing golden-hour atmospheric lighting.
-- [`results/foto_04_campos_lareira_chale_Raw_00001_.png`](./results/foto_04_campos_lareira_chale_Raw_00001_.png) — Indoor fireplace testing dynamic low-light specular highlights and shadow falloff.
+- [foto_02_campos_mirante_por_do_sol_Raw_00001_.png](https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_02_campos_mirante_por_do_sol_Raw_00001_.png) — Sunset mountain overlook testing golden-hour atmospheric lighting.
+- [foto_04_campos_lareira_chale_Raw_00001_.png](https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_04_campos_lareira_chale_Raw_00001_.png) — Indoor fireplace testing dynamic low-light specular highlights and shadow falloff.
