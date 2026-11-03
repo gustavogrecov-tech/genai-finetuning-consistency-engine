@@ -1,0 +1,45 @@
+{
+  "last_node_id": 13,
+  "last_link_id": 16,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UnetLoaderGGUF",
+      "pos": [40, 60],
+      "size": [310, 80],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [{"name": "MODEL", "type": "MODEL", "links": [1], "shape": 3, "slot_index": 0}],
+      "widgets_values": ["qwen-image-2.1-UC-BF16.gguf"],
+      "title": "1. Qwen-Image 2.1 Model Loader"
+    },
+    {
+      "id": 13,
+      "type": "LoraLoader",
+      "pos": [390, 60],
+      "size": [310, 130],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [{"name": "model", "type": "MODEL", "link": 1}],
+      "outputs": [{"name": "MODEL", "type": "MODEL", "links": [15], "shape": 3, "slot_index": 0}],
+      "widgets_values": ["qwen_sofia_lora.safetensors", 1.0, 1.0],
+      "title": "2. Qwen Sofia LoRA Adapter (1000 steps)"
+    },
+    {
+      "id": 7,
+      "type": "KSampler",
+      "pos": [1210, 60],
+      "size": [310, 470],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [{"name": "model", "type": "MODEL", "link": 15}],
+      "outputs": [{"name": "LATENT", "type": "LATENT", "links": [10], "shape": 3, "slot_index": 0}],
+      "widgets_values": [42, "randomize", 25, 3.5, "euler", "flowmatch", 1.0],
+      "title": "3. KSampler FlowMatch"
+    }
+  ]
+}
