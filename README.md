@@ -142,7 +142,7 @@ A validação empírica deste projeto adota uma **postura rigorosa de engenharia
 
 | Amostra de Validação RAW (Produção - Step 700) | Comparativo de Checkpoint (Step 400) |
 | :---: | :---: |
-| <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_01_campos_cafe_capivari_Raw_00001_.png" width="400" alt="Sofia em Campos do Jordão RAW" /> | <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/comparison_step_400.png" width="400" alt="Sofia Step 400" /> |
+| <img src="./benchmarks/results/foto_01_campos_cafe_capivari_Raw_00001_.png" width="400" alt="Sofia em Campos do Jordão RAW" /> | <img src="./benchmarks/results/comparison_step_400.png" width="400" alt="Sofia Step 400" /> |
 | *Teste Out-of-Distribution: Cenário alpino, vestuário de inverno e iluminação fria* | *Convergência intermediária de treino (Step 400)* |
 
 </div>

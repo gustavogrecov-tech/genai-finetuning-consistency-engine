@@ -6,7 +6,7 @@ Para avaliar de forma realista o comportamento dos adaptadores LoRA treinados so
 O objetivo deste relatório não é apresentar apenas os melhores resultados, mas sim documentar com **rigor científico e transparência de engenharia** o que funcionou e quais foram as falhas e limitações observadas na versão V1.
 
 ### Dados da Inferência:
-- **Arquivo de Teste RAW:** [`foto_01_campos_cafe_capivari_Raw_00001_.png`](https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_01_campos_cafe_capivari_Raw_00001_.png)
+- **Arquivo de Teste RAW:** [`foto_01_campos_cafe_capivari_Raw_00001_.png`](./results/foto_01_campos_cafe_capivari_Raw_00001_.png)
 - **Checkpoint Utilizado:** `krea/Krea-2-Raw` + `sofia_krea2_step_700.safetensors`
 - **Configuração:** FlowMatch Scheduler, 28 passos, CFG Scale 4.5, Resolução $1024 \times 1024$, Seed 42
 
@@ -43,7 +43,7 @@ O objetivo deste relatório não é apresentar apenas os melhores resultados, ma
 
 | Amostra RAW em Produção (Step 700) | Checkpoint Intermediário (Step 400) |
 | :---: | :---: |
-| <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_01_campos_cafe_capivari_Raw_00001_.png" width="400" alt="Sofia Café Capivari Step 700" /> | <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/comparison_step_400.png" width="400" alt="Sofia Step 400" /> |
+| <img src="./results/foto_01_campos_cafe_capivari_Raw_00001_.png" width="400" alt="Sofia Café Capivari Step 700" /> | <img src="./results/comparison_step_400.png" width="400" alt="Sofia Step 400" /> |
 | *Step 700: Maior fixação fisionômica, porém com textura de pele cerosa/plástica evidente.* | *Step 400: Pele mais flexível e menos saturada, mas com identidade biométrica ainda difusa.* |
 
 </div>
@@ -61,8 +61,8 @@ O objetivo deste relatório não é apresentar apenas os melhores resultados, ma
 
 ## 4. Cenários Adicionais de Estresse
 
-- [foto_02_campos_mirante_por_do_sol_Raw_00001_.png](https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_02_campos_mirante_por_do_sol_Raw_00001_.png) — Mirante ao pôr do sol: evidenciou superexposição no perfil do rosto e inconsistência de formato do nariz contra a luz solar oblíqua.
-- [foto_04_campos_lareira_chale_Raw_00001_.png](https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_04_campos_lareira_chale_Raw_00001_.png) — Ambiente de lareira interna: iluminação de penumbra acentuou o aspecto ceroso e artificial da testa e bochechas.
+- [foto_02_campos_mirante_por_do_sol_Raw_00001_.png](./results/foto_02_campos_mirante_por_do_sol_Raw_00001_.png) — Mirante ao pôr do sol: evidenciou superexposição no perfil do rosto e inconsistência de formato do nariz contra a luz solar oblíqua.
+- [foto_04_campos_lareira_chale_Raw_00001_.png](./results/foto_04_campos_lareira_chale_Raw_00001_.png) — Ambiente de lareira interna: iluminação de penumbra acentuou o aspecto ceroso e artificial da testa e bochechas.
 
 ---
 
