@@ -34,7 +34,16 @@ The training set comprises 13 pristine, uncompressed $1024 \times 1024$ image-te
 
 ---
 
-## 4. Sample Verification Pairs
+## 4. Limitações de Escala Observadas (Dataset V1)
+
+A análise empírica dos resultados revelou que **13 pares de treinamento representam um gargalo de generalização**:
+1. **Sub-representação de Corpo Inteiro:** Com apenas 3 imagens de corpo inteiro, o modelo sofreu deriva de identidade fisionômica ao tentar sintetizar a personagem em planos abertos e dinâmicos.
+2. **Homogeneidade de Iluminação Inicial:** As imagens de treino possuíam iluminação predominantemente difusa e controlada de estúdio, o que dificultou a adaptação para luz solar direta ou sombras duras de montanha sem introduzir o efeito de pele cerosa/plástica.
+3. **Plano de Expansão (Próxima Iteração):** Curadoria de mais 12 pares focados em variações angulares (perfil e 3/4), poses dinâmicas e texturas de pele não retocadas para restaurar a microderme natural.
+
+---
+
+## 5. Sample Verification Pairs
 All 13 training pairs are preserved in [`samples/`](./samples/) and mirrored on [Hugging Face](https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/tree/main/dataset/samples) for full auditability and reproducibility.
 
 ### Visual Preview of Dataset Stratification:

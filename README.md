@@ -132,26 +132,48 @@ Um diferencial central deste projeto de Engenharia de IA é a abordagem de **Fin
 
 ---
 
-## 📊 Empirical Validation & Production Benchmarks
+## 📊 Empirical Validation & Production Benchmarks (Diagnóstico Técnico Real)
 
-Para certificar que o modelo não sofreu *overfitting* de estúdio, executamos uma validação cega em cenário complexo fora da distribuição de treino: **Sofia em Campos do Jordão (Vila Capivari)** em uma manhã fria e nebulosa.
+A validação empírica deste projeto adota uma **postura rigorosa de engenharia**: em vez de mascarar imperfeições ou selecionar apenas "gerações de sorte", documentamos de forma transparente os resultados atuais (V1), os avanços alcançados e, principalmente, os **gargalos técnicos e inconsistências reais** que ainda estão em fase de mitigação ativa.
 
 ### Amostras de Produção Renderizadas:
 
 <div align="center">
 
-| Amostra de Validação RAW (Produção) | Comparativo de Checkpoint (Step 400) |
+| Amostra de Validação RAW (Produção - Step 700) | Comparativo de Checkpoint (Step 400) |
 | :---: | :---: |
 | <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/foto_01_campos_cafe_capivari_Raw_00001_.png" width="400" alt="Sofia em Campos do Jordão RAW" /> | <img src="https://huggingface.co/datasets/gustavogrecov002/sofia-consistency-engine/resolve/main/benchmarks/results/comparison_step_400.png" width="400" alt="Sofia Step 400" /> |
-| *Cenário Complexo: Iluminação fria, vapor volumétrico, derme realista* | *Convergência intermediária de fisionomia e textura* |
+| *Teste Out-of-Distribution: Cenário alpino, vestuário de inverno e iluminação fria* | *Convergência intermediária de treino (Step 400)* |
 
 </div>
 
-### Critérios Técnicos Auditados:
-1. **Fidelidade da Microderme:** Poros dilatados naturalmente, textura orgânica sem efeito de boneca plástica (*airbrushed*), sardas tênues no dorso nasal.
-2. **Simetria Ocular e Reflexão Óptica:** Íris verde-esmeralda com reflexo especular vítreo coerente com a névoa exterior.
-3. **Anatomia Complexa das Mãos:** Ambas as mãos segurando a caneca de cerâmica com proporção falângica correta, 5 dedos articulados e unhas anatomicamente exatas.
-4. **Física Volumétrica e Tecido:** Fumaça translúcida subindo do chocolate quente e textura tridimensional do tricô de lã crua.
+### 🔍 Diagnóstico Crítico de Falhas e Limitações Observadas
+
+Uma análise técnica honesta das amostras revela os seguintes problemas no estado atual do modelo:
+
+1. **Aspecto Cerosa / Pele Plástica (Waxy Skin Artifact):**
+   - **Diagnóstico:** Apesar da redução drástica da função de perda ($0.8420 \rightarrow 0.0185$), a textura da derme facial nas imagens geradas ainda apresenta um acabamento semibrilhante e alisado em excesso ("efeito cera/boneca de plástico"), com deficiência na definição de microporos e textura dérmica genuína.
+   - **Causa Raiz Identificada:** O `lora_alpha=32` com taxa de aprendizado constante nas projeções de atenção (`to_q`, `to_k`, `to_v`, `to_out.0`) induziu um leve sobreajuste (overfitting local) nos passos finais (500–700), além da saturação gerada pelo valor elevado de Guidance Scale (CFG 4.5).
+
+2. **Inconsistência Fisionômica e Drift Facial (Identity Drift):**
+   - **Diagnóstico:** A personagem **Sofia ainda não atingiu a consistência biométrica plena** esperada entre diferentes planos e enquadramentos. Em fotos de rosto frontal (headshots), os traços se aproximam do dataset; contudo, em planos abertos ou ângulos dinâmicos (como na amostra de Campos do Jordão), ocorre um desvio perceptível no contorno mandibular, espessura dos lábios e formato dos olhos em relação aos pares originais de referência.
+   - **Causa Raiz Identificada:** Volume restrito de imagens de corpo inteiro no dataset inicial (3 pares de 13), somado à dispersão dos gradientes quando o modelo precisa simultaneamente sintetizar vestuários pesados e cenários inéditos.
+
+3. **Anatomia e Articulação de Mãos:**
+   - **Diagnóstico:** Embora a imagem de Campos do Jordão tenha conseguido posicionar as mãos sobre a xícara sem mutilações grotescas, a articulação dos nós dos dedos e a espessura falângica ainda revelam imperfeições anatômicas perceptíveis a um olhar técnico atento.
+
+---
+
+### 🛠️ Roadmap de Mitigações Técnicas (Desenvolvimento Iterativo em Andamento)
+
+Este repositório serve como ambiente vivo de engenharia. Em vez de descartar os experimentos, apresentamos os resultados da V1 e estamos trabalhando nas seguintes mitigações para os próximos commits:
+
+| Desafio Identificado | Mitigação Técnica Planejada | Status |
+| :--- | :--- | :---: |
+| **Pele Cerosa (Waxy Artifact)** | Redução do CFG Scale de 4.5 para 3.2–3.6; calibração do `lora_alpha` para 16 (em vez de 32) para suavizar a injeção nas camadas de atenção. | 🟡 Em Teste |
+| **Drift de Identidade Facial** | Inclusão de dataset de regularização facial (preservação de classe) e aumento de pares de corpo inteiro com enquadramentos em 3/4 e iluminação contrastante. | 🟡 Em Curadoria |
+| **Overfitting em Passos Avançados** | Comparação formal de checkpoints intermediários (Steps 300, 400 e 500) para identificar o ponto ótimo de trade-off entre flexibilidade e identidade. | 🟢 Documentado |
+| **Isolamento de Camadas LoRA** | Restringir o treinamento LoRA exclusivamente aos blocos centrais e profundos do Transformer, congelando os blocos iniciais responsáveis por detalhes de alta frequência e textura de pele. | 🟡 Próximo Commit |
 
 ---
 
